@@ -1,0 +1,71 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+struct fract
+{
+    int num;
+    int den;
+    
+};
+
+struct fract read()
+{
+    struct fract f;
+    printf("read the numerator and denominator");
+    scanf("%d%d",&f.num,&f.den);
+    return f;
+}
+
+void nfract(int n)
+{   int i;
+    struct fract array[100];
+    printf("enter the value of n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+        array[i]=read();
+        
+}
+
+struct fract add(int i)
+{   struct fract sum;
+    struct fract array[100];
+    int lcm,x,y;
+    lcm=lcmfract(array[i].den,sum.den);
+    
+    x=(array[i].num/array[i].den)*lcm;
+    y=(sum.num/sum.den)*lcm;
+    sum.num=x+y;
+    sum.den=lcm;
+    return sum;
+    
+}
+
+int lcmfract(int n1,n2)
+{
+    int max,temp,lcm=0;
+    if(n1>n2)
+      max=temp=n1;
+    else
+      max=temp=n2;
+    
+    while(1)
+    {
+        if(max%n1==0 && max%n2==0)
+        {
+            lcm=max;
+            break;
+        }
+        max+=temp;
+    }
+    return lcm;
+}
+
+
+
